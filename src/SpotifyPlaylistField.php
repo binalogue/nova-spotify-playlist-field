@@ -1,6 +1,6 @@
 <?php
 
-namespace Mgoigfer\SpotifyPlaylistField;
+namespace Binalogue\SpotifyPlaylistField;
 
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Http\Requests\NovaRequest;

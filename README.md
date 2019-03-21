@@ -1,11 +1,11 @@
 # Laravel Nova Spotify Playlist Field
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/mgoigfer/nova-spotify-playlist-field.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/nova-spotify-playlist-field)
-[![Build Status](https://img.shields.io/travis/mgoigfer/nova-spotify-playlist-field/master.svg?style=flat-square)](https://travis-ci.org/mgoigfer/nova-spotify-playlist-field)
-[![Quality Score](https://img.shields.io/scrutinizer/g/mgoigfer/nova-spotify-playlist-field.svg?style=flat-square)](https://scrutinizer-ci.com/g/mgoigfer/nova-spotify-playlist-field)
-[![Total Downloads](https://img.shields.io/packagist/dt/mgoigfer/nova-spotify-playlist-field.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/nova-spotify-playlist-field)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/binalogue/nova-spotify-playlist-field.svg?style=flat-square)](https://packagist.org/packages/binalogue/nova-spotify-playlist-field)
+[![Build Status](https://img.shields.io/travis/binalogue/nova-spotify-playlist-field/master.svg?style=flat-square)](https://travis-ci.org/binalogue/nova-spotify-playlist-field)
+[![Quality Score](https://img.shields.io/scrutinizer/g/binalogue/nova-spotify-playlist-field.svg?style=flat-square)](https://scrutinizer-ci.com/g/binalogue/nova-spotify-playlist-field)
+[![Total Downloads](https://img.shields.io/packagist/dt/binalogue/nova-spotify-playlist-field.svg?style=flat-square)](https://packagist.org/packages/binalogue/nova-spotify-playlist-field)
 
-This [Nova](https://nova.laravel.com/) package adds a Spotify playlist field. Under the hood it uses the [mgoigfer/laravel-spotify-wrapper](https://github.com/mgoigfer/laravel-spotify-wrapper) and [mgoigfer/nova-spotify-auth-resource-tool](https://github.com/mgoigfer/nova-spotify-auth-resource-tool) packages.
+This [Nova](https://nova.laravel.com/) package adds a Spotify playlist field. Under the hood it uses the [binalogue/laravel-spotify-wrapper](https://github.com/binalogue/laravel-spotify-wrapper) and [binalogue/nova-spotify-auth-resource-tool](https://github.com/binalogue/nova-spotify-auth-resource-tool) packages.
 
 You can add tracks from the [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to your database.
 
@@ -13,12 +13,12 @@ You can add tracks from the [Spotify Web API](https://developer.spotify.com/docu
 
 ## Installation
 
-First, you must install [mgoigfer/laravel-spotify-wrapper](https://github.com/mgoigfer/laravel-spotify-wrapper) and [mgoigfer/nova-spotify-auth-resource-tool](https://github.com/mgoigfer/nova-spotify-auth-resource-tool) into your Laravel app.
+First, you must install [binalogue/laravel-spotify-wrapper](https://github.com/binalogue/laravel-spotify-wrapper) and [binalogue/nova-spotify-auth-resource-tool](https://github.com/binalogue/nova-spotify-auth-resource-tool) into your Laravel app.
 
 Next, you can install this package via [Composer](https://getcomposer.org/):
 
 ```bash
-composer require mgoigfer/nova-spotify-playlist-field
+composer require binalogue/nova-spotify-playlist-field
 ```
 
 ## Use
@@ -36,7 +36,7 @@ public function fields(Request $request)
 {
     return [
         ...
-        \Mgoigfer\SpotifyPlaylistField\SpotifyPlaylistField::make('Name')
+        \Binalogue\SpotifyPlaylistField\SpotifyPlaylistField::make('Name')
             ->spotifyAccessToken()
             ->optionalParameters([
                 'id' => 'spotify_id',
@@ -52,7 +52,7 @@ public function fields(Request $request)
 
 You must use the following methods:
 
-* `spotifyAccessToken`: to request a Spotify `access token` from the `refresh token` stored in the database (see [mgoigfer/nova-spotify-auth-resource-tool](https://github.com/mgoigfer/nova-spotify-auth-resource-tool)).
+* `spotifyAccessToken`: to request a Spotify `access token` from the `refresh token` stored in the database (see [binalogue/nova-spotify-auth-resource-tool](https://github.com/binalogue/nova-spotify-auth-resource-tool)).
 * `optionalParameters`: a key-value array that indicates which track attributes you would like to store (keys), and the column name in your database where they may be stored (values).
 
 ### List of track attributes:
@@ -78,7 +78,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Mikel Goig](https://github.com/mgoigfer)
+- [Mikel Goig](https://github.com/binalogue)
 
 ## License
 

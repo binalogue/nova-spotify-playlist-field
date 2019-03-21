@@ -1,6 +1,6 @@
 <?php
 
-namespace Mgoigfer\SpotifyPlaylistField;
+namespace Binalogue\SpotifyPlaylistField;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;

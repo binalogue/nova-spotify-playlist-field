@@ -1,5 +1,5 @@
 {
-    "name": "mgoigfer/nova-spotify-playlist-field",
+    "name": "binalogue/nova-spotify-playlist-field",
     "description": "A Spotify playlist field to use in your Laravel Nova apps.",
     "keywords": [
         "laravel",
@@ -7,7 +7,7 @@
         "spotify",
         "package"
     ],
-    "homepage": "https://github.com/mgoigfer/nova-spotify-playlist-field",
+    "homepage": "https://github.com/binalogue/nova-spotify-playlist-field",
     "license": "MIT",
     "type": "package",
     "authors": [
@@ -21,13 +21,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Mgoigfer\\SpotifyPlaylistField\\": "src/"
+            "Binalogue\\SpotifyPlaylistField\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mgoigfer\\SpotifyPlaylistField\\SpotifyPlaylistFieldServiceProvider"
+                "Binalogue\\SpotifyPlaylistField\\SpotifyPlaylistFieldServiceProvider"
             ]
         }
     },
