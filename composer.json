@@ -1,0 +1,39 @@
+{
+    "name": "mgoigfer/nova-spotify-playlist-field",
+    "description": "A Spotify playlist field to use in your Laravel Nova apps.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "spotify",
+        "package"
+    ],
+    "homepage": "https://github.com/mgoigfer/nova-spotify-playlist-field",
+    "license": "MIT",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Mikel Goig",
+            "email": "m@mikelgoig.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mgoigfer\\SpotifyPlaylistField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mgoigfer\\SpotifyPlaylistField\\SpotifyPlaylistFieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
