@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/binalogue/nova-spotify-playlist-field.svg?style=flat-square)](https://scrutinizer-ci.com/g/binalogue/nova-spotify-playlist-field)
 [![Total Downloads](https://img.shields.io/packagist/dt/binalogue/nova-spotify-playlist-field.svg?style=flat-square)](https://packagist.org/packages/binalogue/nova-spotify-playlist-field)
 
-This [Nova](https://nova.laravel.com/) package adds a Spotify playlist field. Under the hood it uses the [binalogue/laravel-spotify-wrapper](https://github.com/binalogue/laravel-spotify-wrapper) and [binalogue/nova-spotify-auth-resource-tool](https://github.com/binalogue/nova-spotify-auth-resource-tool) packages.
+This [Nova](https://nova.laravel.com/) package adds a Spotify playlist field. Under the hood it uses the [binalogue/laravel-spotify-wrapper](https://github.com/binalogue/laravel-spotify-wrapper) and [binalogue/nova-spotify-auth-tool](https://github.com/binalogue/nova-spotify-auth-tool) packages.
 
 You can add tracks from the [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to your database.
 
@@ -13,7 +13,7 @@ You can add tracks from the [Spotify Web API](https://developer.spotify.com/docu
 
 ## Installation
 
-First, you must install [binalogue/laravel-spotify-wrapper](https://github.com/binalogue/laravel-spotify-wrapper) and [binalogue/nova-spotify-auth-resource-tool](https://github.com/binalogue/nova-spotify-auth-resource-tool) into your Laravel app.
+First, you must install [binalogue/laravel-spotify-wrapper](https://github.com/binalogue/laravel-spotify-wrapper) and [binalogue/nova-spotify-auth-tool](https://github.com/binalogue/nova-spotify-auth-tool) into your Laravel app.
 
 Next, you can install this package via [Composer](https://getcomposer.org/):
 
@@ -52,7 +52,7 @@ public function fields(Request $request)
 
 You must use the following methods:
 
-* `spotifyAccessToken`: to request a Spotify `access token` from the `refresh token` stored in the database (see [binalogue/nova-spotify-auth-resource-tool](https://github.com/binalogue/nova-spotify-auth-resource-tool)).
+* `spotifyAccessToken`: to request a Spotify `access token` from the `refresh token` stored in the database (see [binalogue/nova-spotify-auth-tool](https://github.com/binalogue/nova-spotify-auth-tool)).
 * `optionalParameters`: a key-value array that indicates which track attributes you would like to store (keys), and the column name in your database where they may be stored (values).
 
 ### List of track attributes:
