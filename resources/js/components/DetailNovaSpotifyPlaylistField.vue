@@ -78,9 +78,17 @@
       </div>
 
       <div class="w-3/4 py-4">
-        <p>
-          {{ playlist.public || '-' }}
-        </p>
+        <span
+          v-if="'public' in playlist"
+          :class="{
+            'bg-success': playlist.public,
+            'bg-danger': !playlist.public,
+          }"
+          class="inline-block rounded-full w-2 h-2"
+        />
+        <span v-else>
+          -
+        </span>
       </div>
     </div>
 
@@ -95,9 +103,17 @@
       </div>
 
       <div class="w-3/4 py-4">
-        <p>
-          {{ playlist.collaborative || '-' }}
-        </p>
+        <span
+          v-if="'collaborative' in playlist"
+          :class="{
+            'bg-success': playlist.collaborative,
+            'bg-danger': !playlist.collaborative,
+          }"
+          class="inline-block rounded-full w-2 h-2"
+        />
+        <span v-else>
+          -
+        </span>
       </div>
     </div>
   </div>
