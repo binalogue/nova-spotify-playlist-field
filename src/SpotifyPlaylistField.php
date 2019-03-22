@@ -23,7 +23,7 @@ class SpotifyPlaylistField extends Field
     /**
      * The Spotify API optional parameters.
      */
-    public $optionalParameters = [
+    public $defaultOptionalParameters = [
         'public',
         'collaborative',
         'description',
@@ -41,21 +41,21 @@ class SpotifyPlaylistField extends Field
     protected function fillAttributeFromRequest(NovaRequest $request,
         $requestAttribute, $model, $attribute)
     {
-        // Required parameters
+        // Required parameters.
+
         $model->spotifyApiName = $request->exists('name')
             ? $request['name']
             : 'Playlist name';
 
-        // Optional parameters
-        foreach ($this->optionalParameters as $attr) {
-            if (
-                collect($this->meta['optionalParameters'])->contains($attr)
-                && $request->exists($attr)
-            ) {
-                $a = ucfirst($attr);
-                $model->{"spotifyApi{$a}"} = $request[$attr];
-            }
-        }
+        // Optional parameters.
+
+        collect($request)
+            ->only($this->meta['optionalParameters'])
+            ->only($this->defaultOptionalParameters)
+            ->each(function ($value, $key) use ($model) {
+                $ucfirstKey = ucfirst($key);
+                $model->{"spotifyApi{$ucfirstKey}"} = $value;
+            });
     }
 
     /*
@@ -121,13 +121,13 @@ class SpotifyPlaylistField extends Field
     /**
      * Set the optional Spotify API parameters.
      *
-     * @param  array  $optionalParameters
+     * @param  array|null  $parameters
      * @return $this
      */
-    public function optionalParameters(array $optionalParameters)
+    public function optionalParameters($parameters)
     {
         return $this->withMeta([
-            'optionalParameters' => $optionalParameters,
+            'optionalParameters' => $parameters ?: $this->defaultOptionalParameters,
         ]);
     }
 }
